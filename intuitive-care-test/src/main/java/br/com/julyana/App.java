@@ -1,13 +1,16 @@
 package br.com.julyana;
 
-/**
- * Hello world!
- *
- */
+import br.com.julyana.service.AnsDownloaderService;
+import br.com.julyana.service.ProcessadorContabilService; 
+
 public class App 
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
+    public static void main( String[] args ) throws Exception {
+
+    AnsDownloaderService downloader = new AnsDownloaderService();
+    downloader.baixarArquivos();
+
+    ProcessadorContabilService servico = new ProcessadorContabilService();
+    servico.iniciar();
+}
 }
